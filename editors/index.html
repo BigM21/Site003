@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/mediastyle.css" />
+  </head>
+  <style>
+    :root {
+      --color-primary: #008073;
+      --color-primary-variant: rgba(0, 0, 240, 0.2);
+      --color-secondary: rgb(23, 143, 255);
+      --color-white: #fff;
+      --color-off-white: rgb(192, 192, 192);
+      --color-light: #f4f4f4;
+      --color-black: #000f37;
+      --color-dark: #575757;
+
+      --bottom-section-padding: 12rem;
+      --bottom-section-padding-mobile: 8rem;
+
+      --transiton: all 400ms ease;
+
+      --container-width: 84%;
+      --container-width-tablet: 90%;
+      --container-width-phone: 94%;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      outline: 0;
+      border: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      margin: 0;
+    }
+
+    body {
+      padding: 0%;
+      margin: 0%;
+      line-height: 1.7;
+      overflow-x: hidden;
+      /* background-attachment: fixed; */
+    }
+
+    .container {
+      width: var(--container-width);
+      margin: 0 auto;
+    }
+
+    .nav__container {
+      width: 100vw;
+      height: 15vh;
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      border-bottom: 5px solid var(--color-off-white);
+    }
+
+    .nav__img {
+      display: flex;
+      height: 80%;
+      justify-content: left;
+      align-items: center;
+      margin: 5px 10px;
+    }
+
+    .nav__links {
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: auto 20px;
+      font-size: larger;
+    }
+
+    .nav__links a {
+      padding: 5px 15px;
+      color: var(--color-black);
+      font-weight: 900;
+    }
+
+    .nav__links a:active {
+      border: 3px solid var(--color-black);
+      border-radius: 5px;
+    }
+
+    .chk__container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 20vh 0;
+    }
+
+    .main__chk {
+      display: grid;
+      width: 70%;
+      grid-template-columns: 2fr 1fr;
+      /* padding: 50px 50px; */
+      background-color: var(--color-secondary);
+      box-shadow: 0px 0px 10px var(--color-off-white);
+      border-radius: 10px;
+    }
+
+    .chk__row {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      padding: 30px 30px;
+      border-bottom: 2px solid var(--color-off-white);
+    }
+    #chk__h1 {
+      font-size: 39px;
+      font-weight: 100;
+      text-shadow: 0px 5px 1px var(--color-off-white);
+    }
+
+    .row {
+      padding: 50px 10px;
+    }
+
+    .col1 {
+      background-color: white;
+      padding: 40px;
+    }
+
+    .sub__heading {
+      display: grid;
+      grid-template-columns: 1fr 8fr;
+      align-items: center;
+    }
+    .sub__heading img {
+      height: 50px;
+      width: auto;
+    }
+
+    .input__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    label {
+      display: block;
+      font-size: x-large;
+    }
+    input {
+      width: 70%;
+      height: 45px;
+      background-color: var(--color-off-white);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: large;
+    }
+
+    .payment {
+      border-bottom: 2px solid var(--color-off-white);
+      border-top: 2px solid var(--color-off-white);
+    }
+
+    .btn {
+      height: 85px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-primary);
+      font-size: 30px;
+      padding: 20px;
+      border-radius: 7px;
+    }
+
+    .btn a {
+      width: 100%;
+      color: var(--color-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .col2 {
+      padding: 40px 40px;
+      color: var(--color-white);
+    }
+
+    .row1 {
+      line-height: 50px;
+    }
+
+    #price__header {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    #price__title {
+      margin-top: 30px;
+      font-size: 50px;
+    }
+
+    .row2 {
+      margin-top: 20px;
+    }
+
+    .row2,
+    .row3 {
+      line-height: 40px;
+    }
+
+    .r001 {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+    }
+
+    .check__img {
+      height: 30px;
+      /* display: flex;
+    justify-content: left; */
+    }
+
+    .check__txt {
+      display: flex;
+      /* justify-content: left; */
+      align-items: center;
+    }
+
+    .row3 p,
+    .row4 p {
+      font-size: 20px;
+    }
+    #row3__p {
+      text-decoration: 2px var(--color-light) underline;
+    }
+
+    .row3 {
+      padding: 50px 0 50px 0;
+      border-bottom: 2.5px solid var(--color-off-white);
+    }
+
+    .row4 {
+      padding: 50px 0 20px 0;
+    }
+
+    .row5 {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+    }
+
+    #footer__img {
+      height: 50px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+
+    #footer__name {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+
+    .support__section {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+    }
+
+    #support__img {
+      display: flex;
+      justify-content: right;
+      align-items: start;
+      height: 20px;
+    }
+
+    #support__p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+    }
+
+    .power__logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <nav>
+      <div class="container nav__container">
+        <div class="nav__img">
+          <img src="../images/wplogo.png" alt="" />
+        </div>
+        <div class="nav__links">
+          <a href="">Download</a>
+          <a href="">Learn More</a>
+          <a href="">Pricing</a>
+          <a href="">Help</a>
+          <a href="" id="acct__link">Account</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="chk__container">
+      <div class="main__chk">
+        <div class="col1">
+          <div class="checkout chk__row">
+            <h1 id="chk__h1">Checkout</h1>
+          </div>
+
+          <div class="basic row">
+            <div class="sub__heading">
+              <div class="img1">
+                <img
+                  class="numbers__img"
+                  src="../images/number1-removebg-preview (1).png"
+                  alt=""
+                />
+              </div>
+              <div class="basic__heading">
+                <h2 id="basic__h2">Your Basic Information</h2>
+              </div>
+            </div>
+            <div class="input__row">
+              <div class="first__name">
+                <label for="">First Name</label>
+                <input type="text" placeholder="Jane" />
+              </div>
+              <div class="last__name">
+                <label for="">Last Name</label>
+                <input type="text" placeholder="Doe" />
+              </div>
+            </div>
+            <div id="email__row">
+              <label for="text">E-mail</label>
+              <input type="text" placeholder="janedoe@example.com" />
+            </div>
+          </div>
+
+          <div class="payment row">
+            <div class="payment__row sub__heading">
+              <div id="payment__img">
+                <img
+                  class="numbers__img"
+                  src="../images/number2-removebg-preview.png"
+                  alt=""
+                />
+              </div>
+              <div id="payment__heading">
+                <h2>Your Payment Information</h2>
+              </div>
+            </div>
+            <div class="payment__input">
+              <label for="">Credit Card</label>
+              <input type="checkbox" name="" id="" />
+            </div>
+          </div>
+
+          <div class="chk__btn row">
+            <div class="btn">
+              <a href="">Buy WP pusher</a>
+            </div>
+          </div>
+
+          <div class="support__section">
+            <div id="support__img">
+              <img src="../images/question-removebg-preview.png" alt="" />
+            </div>
+            <div id="support__p">
+              <p><b>Need any help?</b>Don't hesitate to contact support</p>
+            </div>
+          </div>
+
+          <div class="power__logo">
+            <img src="../images/powerimg-removebg-preview (1).png" alt="" />
+          </div>
+        </div>
+
+        <div class="col2">
+          <div class="row1">
+            <h1 id="price__header">Freelancer</h1>
+            <img
+              src="../images/payimg-removebg-preview.png"
+              alt=""
+              id="price__img"
+            />
+            <h2>Automatically renews after 1year</h2>
+          </div>
+          <div class="row2">
+            <div class="r001">
+              <div>
+                <img
+                  src="../images/check-removebg-preview.png"
+                  alt=""
+                  class="check__img"
+                />
+              </div>
+              <div class="check__txt">
+                <h2>Use on 5 client sites</h2>
+              </div>
+            </div>
+            <div class="r001">
+              <div>
+                <img
+                  src="../images/check-removebg-preview.png"
+                  alt=""
+                  class="check__img"
+                />
+              </div>
+              <div class="check__txt">
+                <h2>Private repositories</h2>
+              </div>
+            </div>
+            <div class="r001">
+              <div>
+                <img
+                  src="../images/check-removebg-preview.png"
+                  alt=""
+                  class="check__img"
+                />
+              </div>
+
+              <div class="check__txt">
+                <h2>Email support</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row3">
+            <p>Need <b>20</b> client sites?</p>
+            <p id="row3__p"><b>Switch to the Agency plan</b></p>
+          </div>
+          <div class="row4">
+            <h2>
+              FTP is horrible to deal with <b>WP Pusher</b> solves that issue,
+              and the customer support is awesome
+            </h2>
+          </div>
+          <div class="row5">
+            <div>
+              <img
+                src="../images/potrait-removebg-preview.png"
+                alt=""
+                id="footer__img"
+              />
+            </div>
+            <div id="footer__name">
+              <h2><b>Kirk Beard</b></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
